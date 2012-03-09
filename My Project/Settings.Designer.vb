@@ -53,6 +53,16 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=109.169.67.110;User Id=gradon;password=gradonpass;database=gradon")>  _
+        Public ReadOnly Property gradonConnectionString() As String
+            Get
+                Return CType(Me("gradonConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
