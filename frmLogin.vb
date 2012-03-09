@@ -52,6 +52,11 @@ Public Class frmLogin
         Dim type As String = dr(0).Field(Of String)("type")
 
         Me.Invoke(New MethodInvoker(Sub()
+                                        Select Case type
+                                            Case "admin"
+                                                Dim adFrm As New frmAdmin(txtUser.Text)
+                                                adFrm.Show()
+                                        End Select
 
                                         Me.Close()
                                     End Sub))
