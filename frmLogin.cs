@@ -5,17 +5,24 @@ using System.Drawing;
 using System.Diagnostics;
 using System.Data;
 using System.Xml.Linq;
-using Microsoft.VisualBasic;
+using System.IO;
+using System.Configuration;
 using System.Collections;
 using System.Windows.Forms;
 using System.Text;
 using System.Security.Cryptography;
 using System.Threading;
+using MySql.Data.MySqlClient;
 
 namespace Gradon
 {
 	public partial class frmLogin
 	{
+
+        string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["Gradon.My.MySettings.gradonConnectionString"].ConnectionString;
+        MySqlConnection mConn;
+
+
 		public frmLogin()
 		{
 			InitializeComponent();
@@ -23,6 +30,8 @@ namespace Gradon
 			//Added to support default instance behavour in C#
 			if (defaultInstance == null)
 				defaultInstance = this;
+
+            mConn = new MySqlConnection(connStr);
 		}
 		
 #region Default Instance
@@ -53,9 +62,10 @@ namespace Gradon
 		
 #endregion
 		
-		gradonDataSet gds = new gradonDataSet();
-		gradonDataSet.usersDataTable users;
-		gradonDataSetTableAdapters.usersTableAdapter gDap = new gradonDataSetTableAdapters.usersTableAdapter();
+
+		//gradonDataSet gds = new gradonDataSet();
+		//gradonDataSet.usersDataTable users;
+		//gradonDataSetTableAdapters.usersTableAdapter gDap = new gradonDataSetTableAdapters.usersTableAdapter();
 		
 		public void OK_Click(System.Object sender, System.EventArgs e)
 		{
@@ -91,22 +101,21 @@ namespace Gradon
 		private void DoLogin()
 		{
 			string md5;
-			
+            mConn.Open();
 			md5 = GenerateMD5Hash(txtPass.Text);
-			users = (gradonDataSet.usersDataTable)gds.Tables["users"];
-			gDap.Fill(users);
-			
-			DataRow[] dr = users.Select("id = \'" + txtUser.Text + "\' AND password = \'" + md5 + "\'");
-			
-			if (dr.Length == 0)
+            MySqlCommand mCmd = new MySqlCommand("SELECT type FROM users WHERE id = \'" + MySqlHelper.EscapeString(txtUser.Text) + "\' AND password = \'" + md5 + "\'", mConn);
+            MySqlDataReader mReader = mCmd.ExecuteReader();
+
+			if (!mReader.Read())
 			{
 				MessageBox.Show("Invalid ID or password", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				this.Invoke(new MethodInvoker(EnableControls));
+                mConn.Close();
+                this.Invoke(new MethodInvoker(EnableControls));
 				return;
 			}
-			
-			string type = (string) (dr[0].Field<string>("type"));
-			
+
+			string type = mReader.GetString("type");
+            mConn.Close();
 			this.Invoke(new MethodInvoker(delegate
 			{
 				switch (type)

@@ -45,6 +45,7 @@ namespace Gradon
 		//Do not modify it using the code editor.
 		[System.Diagnostics.DebuggerStepThrough()]private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
@@ -156,7 +157,8 @@ namespace Gradon
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.LogoPictureBox);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
