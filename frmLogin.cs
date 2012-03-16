@@ -124,6 +124,10 @@ namespace Gradon
 						frmAdmin adFrm = new frmAdmin(txtUser.Text);
 						adFrm.Show();
                         break;
+                    case "instructor":
+                        frmInstructor inFrm = new frmInstructor(txtUser.Text);
+                        inFrm.Show();
+                        break;
 				}
 				
 				this.Close();

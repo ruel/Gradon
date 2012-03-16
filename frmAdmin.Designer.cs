@@ -151,6 +151,7 @@ namespace Gradon
             // 
             // btnNew
             // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnNew.Location = new System.Drawing.Point(12, 421);
             this.btnNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNew.Name = "btnNew";
@@ -161,6 +162,7 @@ namespace Gradon
             // 
             // btnEdit
             // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.Location = new System.Drawing.Point(770, 421);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
@@ -171,6 +173,7 @@ namespace Gradon
             // 
             // btnDel
             // 
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.Location = new System.Drawing.Point(886, 421);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDel.Name = "btnDel";
@@ -198,7 +201,7 @@ namespace Gradon
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1024, 500);
             this.Name = "frmAdmin";
-            this.Text = "Gradon";
+            this.Text = "Gradon - Admin";
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
