@@ -261,6 +261,7 @@ namespace Gradon
             if (m == "edit")
             {
                 cbChp.Enabled = true;
+                txtId.Enabled = false;
                 txtPass.Enabled = false;
                 txtCPass.Enabled = false;
                 Thread t1 = new Thread(i => init());

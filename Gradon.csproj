@@ -89,6 +89,42 @@
     <Content Include="gradon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddClass.Designer.cs">
+      <DependentUpon>frmAddClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSec.Designer.cs">
+      <DependentUpon>frmAddSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddStud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStud.Designer.cs">
+      <DependentUpon>frmAddStud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSub.Designer.cs">
+      <DependentUpon>frmAddSub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrades.Designer.cs">
+      <DependentUpon>frmGrades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManClass.Designer.cs">
+      <DependentUpon>frmManClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +167,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAddClass.resx">
+      <DependentUpon>frmAddClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSec.resx">
+      <DependentUpon>frmAddSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStud.resx">
+      <DependentUpon>frmAddStud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSub.resx">
+      <DependentUpon>frmAddSub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrades.resx">
+      <DependentUpon>frmGrades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManClass.resx">
+      <DependentUpon>frmManClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
       <SubType>Designer</SubType>

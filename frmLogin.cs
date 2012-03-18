@@ -155,6 +155,12 @@ namespace Gradon
 			
 			return @out;
 		}
+
+        private void llReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmUser fni = new frmUser("new", "student");
+            fni.ShowDialog(this);
+        }
 		
 	}
 	

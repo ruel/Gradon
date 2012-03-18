@@ -46,26 +46,16 @@ namespace Gradon
 		[System.Diagnostics.DebuggerStepThrough()]private void InitializeComponent()
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.llFg = new System.Windows.Forms.LinkLabel();
+            this.llReg = new System.Windows.Forms.LinkLabel();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.Image = global::My.Resources.Resources.gradon_tiny;
-            this.LogoPictureBox.Location = new System.Drawing.Point(27, 23);
-            this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(138, 201);
-            this.LogoPictureBox.TabIndex = 0;
-            this.LogoPictureBox.TabStop = false;
             // 
             // UsernameLabel
             // 
@@ -127,18 +117,29 @@ namespace Gradon
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
-            // llFg
+            // llReg
             // 
-            this.llFg.ActiveLinkColor = System.Drawing.Color.DarkGray;
-            this.llFg.AutoSize = true;
-            this.llFg.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llFg.LinkColor = System.Drawing.Color.Gray;
-            this.llFg.Location = new System.Drawing.Point(272, 146);
-            this.llFg.Name = "llFg";
-            this.llFg.Size = new System.Drawing.Size(88, 13);
-            this.llFg.TabIndex = 6;
-            this.llFg.TabStop = true;
-            this.llFg.Text = "Forgot Password";
+            this.llReg.ActiveLinkColor = System.Drawing.Color.DarkGray;
+            this.llReg.AutoSize = true;
+            this.llReg.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llReg.LinkColor = System.Drawing.Color.Gray;
+            this.llReg.Location = new System.Drawing.Point(230, 30);
+            this.llReg.Name = "llReg";
+            this.llReg.Size = new System.Drawing.Size(47, 13);
+            this.llReg.TabIndex = 6;
+            this.llReg.TabStop = true;
+            this.llReg.Text = "Register";
+            this.llReg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llReg_LinkClicked);
+            // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.Image = global::My.Resources.Resources.gradon_tiny;
+            this.LogoPictureBox.Location = new System.Drawing.Point(27, 23);
+            this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(138, 201);
+            this.LogoPictureBox.TabIndex = 0;
+            this.LogoPictureBox.TabStop = false;
             // 
             // frmLogin
             // 
@@ -148,7 +149,7 @@ namespace Gradon
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(468, 257);
-            this.Controls.Add(this.llFg);
+            this.Controls.Add(this.llReg);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtPass);
@@ -171,7 +172,7 @@ namespace Gradon
             this.PerformLayout();
 
 		}
-		internal System.Windows.Forms.LinkLabel llFg;
+		internal System.Windows.Forms.LinkLabel llReg;
 		
 	}
 	
