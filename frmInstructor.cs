@@ -18,6 +18,7 @@ namespace Gradon
     {
         string id;
         string classid;
+        bool exflag = false;
         string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["Gradon.My.MySettings.gradonConnectionString"].ConnectionString;
         MySqlConnection mConn;
         List<ListViewItem> lvBackup = new List<ListViewItem>();
@@ -263,6 +264,8 @@ namespace Gradon
                 {
                     mConn.Open();
                     MySqlCommand mCmd = new MySqlCommand("DELETE FROM students WHERE id = '" + rtext + "' AND classid = '" + classid + "'", mConn);
+                    MySqlCommand mCmdG = new MySqlCommand("DELETE FROM grades WHERE id = '" + rtext + "' AND classid = '" + classid + "'", mConn);
+                    mCmdG.ExecuteNonQuery();
                     if (mCmd.ExecuteNonQuery() != 1)
                     {
                         MessageBox.Show("An error has occured during the query. Please contact the administrator", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -285,7 +288,34 @@ namespace Gradon
         {
             if (lvStud.SelectedItems.Count > 0)
             {
+                frmGrades fg = new frmGrades(lvStud.SelectedItems[0].Text, classid);
+                fg.ShowDialog();
+            }
+        }
 
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUser fu = new frmUser("edit", "instructor", id);
+            fu.ShowDialog();
+        }
+
+        private void frmInstructor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (exflag)
+            {
+                e.Cancel = false;
+            }
+            else if (MessageBox.Show("This will log you out, do you want to continue?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                e.Cancel = true;
+                frmLogin lg = new frmLogin();
+                lg.Show();
+                exflag = true;
+                this.Close();
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
     }

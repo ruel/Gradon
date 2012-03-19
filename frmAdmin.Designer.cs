@@ -202,6 +202,7 @@ namespace Gradon
             this.MinimumSize = new System.Drawing.Size(1024, 500);
             this.Name = "frmAdmin";
             this.Text = "Gradon - Admin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAdmin_FormClosing);
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

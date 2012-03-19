@@ -227,13 +227,13 @@
             // gradeReportToolStripMenuItem
             // 
             this.gradeReportToolStripMenuItem.Name = "gradeReportToolStripMenuItem";
-            this.gradeReportToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.gradeReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.gradeReportToolStripMenuItem.Text = "Grade Report";
             // 
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cSVToolStripMenuItem.Text = "CSV";
             // 
             // toolStripSeparator1
@@ -275,6 +275,7 @@
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
             this.accountToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -359,6 +360,7 @@
             this.Name = "frmInstructor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gradon - Instructor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInstructor_FormClosing);
             this.Load += new System.EventHandler(this.frmInstructor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -44,9 +44,11 @@ namespace Gradon
             foreach (string id in ids)
             {
                 MySqlCommand mCmd = new MySqlCommand("INSERT INTO students (id, classid) VALUES ((SELECT id FROM users WHERE id = '" + id + "'), '" + classid + "')", mConn);
+                MySqlCommand mCmdG = new MySqlCommand("INSERT INTO grades (id, classid, mg, cp, sfe, fe, fg, fnum, remark) VALUES ('" + id + "', '" + classid + "', '0', '0', '0', '0', '0', '0', 'N/A')", mConn);
                 try
                 {
                     i = mCmd.ExecuteNonQuery();
+                    mCmdG.ExecuteNonQuery();
                 }
                 catch
                 {

@@ -123,7 +123,7 @@ namespace Gradon
             this.llReg.AutoSize = true;
             this.llReg.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llReg.LinkColor = System.Drawing.Color.Gray;
-            this.llReg.Location = new System.Drawing.Point(230, 30);
+            this.llReg.Location = new System.Drawing.Point(394, 29);
             this.llReg.Name = "llReg";
             this.llReg.Size = new System.Drawing.Size(47, 13);
             this.llReg.TabIndex = 6;

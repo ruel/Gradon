@@ -128,6 +128,10 @@ namespace Gradon
                         frmInstructor inFrm = new frmInstructor(txtUser.Text);
                         inFrm.Show();
                         break;
+                    case "student":
+                        frmStudent fs = new frmStudent(txtUser.Text);
+                        fs.Show();
+                        break;
 				}
 				
 				this.Close();

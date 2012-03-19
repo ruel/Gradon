@@ -15,6 +15,7 @@ namespace Gradon
 {
 	public partial class frmAdmin
 	{
+        bool exflag = false;
 		private string id;
         string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["Gradon.My.MySettings.gradonConnectionString"].ConnectionString;
         MySqlConnection mConn;
@@ -192,6 +193,26 @@ namespace Gradon
                     }
                     mConn.Close();
                 }
+            }
+        }
+        
+        private void frmAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (exflag)
+            {
+                e.Cancel = false;
+            }
+            else if (MessageBox.Show("This will log you out, do you want to continue?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                e.Cancel = true;
+                frmLogin lg = new frmLogin();
+                lg.Show();
+                exflag = true;
+                this.Close();
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
 	}
